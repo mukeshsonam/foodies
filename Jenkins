@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('chekout') {
             steps {
-                git branch: 'main', url: 'https://github.com/mukeshsonam/speed2.git'
+                git branch: 'main', url: 'https://github.com/mukeshsonam/foodies.git'
             }
         }
         
