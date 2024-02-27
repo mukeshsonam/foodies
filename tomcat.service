@@ -1,0 +1,19 @@
+[Service]
+Type=forking
+
+User=root
+Group=root
+
+Environment="JAVA_HOME=/usr/lib/jvm/java-11-openjdk"
+Environment="JAVA_OPTS=-Djava.security.egd=file:///dev/urandom"
+
+Environment="CATALINA_BASE=/u01/middleware/apache-tomcat-9.0.86"
+Environment="CATALINA_HOME=/u01/middleware/apache-tomcat-9.0.86"
+Environment="CATALINA_PID=/u01/middleware/apache-tomcat-9.0.86/temp/tomcat.pid"
+Environment="CATALINA_OPTS=-Xms512M -Xmx1024M -server -XX:+UseParallelGC"
+
+ExecStart=/u01/middleware/apache-tomcat-9.0.86/bin/startup.sh
+ExecStop=/u01/middleware/apache-tomcat-9.0.86/shutdown.sh
+
+[Install]
+WantedBy=multi-user.target
